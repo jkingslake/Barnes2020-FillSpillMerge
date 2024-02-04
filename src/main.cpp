@@ -85,6 +85,14 @@ int main(int argc, char **argv){
 
   timer_io.start();
 
+  // Write out the variable deps
+  label.projection = topo.projection;
+  label.saveGDAL(output_prefix+"-label.tif");
+
+  //Output the flow directions
+  //flowdirs.projection = topo.projection;
+  //flowdirs.saveGDAL(output_prefix+"-flowdirs.tif");
+
   //Output the water table depth
   wtd.saveGDAL(output_prefix+"-wtd.tif");
 
